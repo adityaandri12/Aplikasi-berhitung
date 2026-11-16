@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ayo Berhitung!</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main id="app">
+
+    <!-- Layar awal -->
+    <section id="screen-start" class="screen active">
+      <h1 class="title">Ayo Berhitung! <span aria-hidden="true">🧮</span></h1>
+      <p class="subtitle">Pilih latihan yang kamu mau</p>
+
+      <h2 class="label">Jenis soal</h2>
+      <div class="choices" id="mode-choices">
+        <button class="choice selected" data-mode="tambah"><span class="big">+</span>Penjumlahan</button>
+        <button class="choice" data-mode="kurang"><span class="big">−</span>Pengurangan</button>
+        <button class="choice" data-mode="campur"><span class="big">±</span>Campur</button>
+      </div>
+
+      <h2 class="label">Tingkat</h2>
+      <div class="choices" id="level-choices">
+        <button class="choice selected" data-max="10"><span class="big">🐣</span>Mudah<small>sampai 10</small></button>
+        <button class="choice" data-max="20"><span class="big">🐥</span>Sedang<small>sampai 20</small></button>
+      </div>
+
+      <button id="btn-start" class="btn-main">Mulai! ▶</button>
+      <p class="best" id="best-score"></p>
+    </section>
+
+    <!-- Layar soal -->
+    <section id="screen-quiz" class="screen">
+      <div class="topbar">
+        <button id="btn-home" class="btn-small" aria-label="Kembali ke awal">🏠</button>
+        <div class="progress" aria-label="Kemajuan">
+          <div class="progress-bar" id="progress-bar"></div>
+        </div>
+        <div class="score">⭐ <span id="score">0</span></div>
+      </div>
+
+      <p class="question-no" id="question-no">Soal 1 dari 10</p>
+      <div class="question" id="question" aria-live="polite">3 + 2 = ?</div>
+      <div class="visual" id="visual" aria-hidden="true"></div>
+
+      <div class="answers" id="answers"></div>
+      <p class="feedback" id="feedback" aria-live="assertive"></p>
+    </section>
+
+    <!-- Layar hasil -->
+    <section id="screen-result" class="screen">
+      <h1 class="title" id="result-title">Hebat!</h1>
+      <div class="stars" id="result-stars"></div>
+      <p class="result-text" id="result-text"></p>
+      <button id="btn-again" class="btn-main">Main Lagi 🔁</button>
+      <button id="btn-menu" class="btn-secondary">Ganti Latihan</button>
+    </section>
+
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
